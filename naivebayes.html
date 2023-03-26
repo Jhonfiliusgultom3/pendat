@@ -168,6 +168,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas NaiveBayes</a></li>
 
 
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
 
@@ -363,8 +369,14 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tugas NaiveBayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-importing-the-libraries">Step 1: Importing the Libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-importing-the-dataset">Step 2: Importing the dataset</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-splitting-the-dataset-into-the-training-set-and-test-set">Step 3: Splitting the dataset into the Training set and Test set</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-feature-scaling">Step 4: Feature Scaling</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-training-the-naive-bayes-classification-model-on-the-training-set">Step 5: Training the Naive Bayes Classification model on the Training Set</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-predicting-the-test-set-results">Step 6: Predicting the Test set results</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-confusion-matrix-and-accuracy">Step 7: Confusion Matrix and Accuracy</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-comparing-the-real-values-with-predicted-values">Step 8: Comparing the Real Values with Predicted Values</a></li>
 </ul>
 
             </nav>
@@ -379,8 +391,10 @@ document.write(`
                   
   <div class="tex2jax_ignore mathjax_ignore section" id="tugas-naivebayes">
 <h1>Tugas NaiveBayes<a class="headerlink" href="#tugas-naivebayes" title="Permalink to this heading">#</a></h1>
-<p>#Step 1: Importing the Libraries
-As always, the first step will always include importing the libraries which are the NumPy, Pandas and the Matplotlib.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="step-1-importing-the-libraries">
+<h1>Step 1: Importing the Libraries<a class="headerlink" href="#step-1-importing-the-libraries" title="Permalink to this heading">#</a></h1>
+<p>As always, the first step will always include importing the libraries which are the NumPy, Pandas and the Matplotlib.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -390,8 +404,10 @@ As always, the first step will always include importing the libraries which are 
 </div>
 </div>
 </div>
-<p>#Step 2: Importing the dataset
-In this step, we shall import the Iris Flower dataset which is stored in my github repository as IrisDataset.csv and save it to the variable dataset. After this, we assign the 4 independent variables to X and the dependent variable ‘species’ to Y. The first 5 rows of the dataset are displayed.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="step-2-importing-the-dataset">
+<h1>Step 2: Importing the dataset<a class="headerlink" href="#step-2-importing-the-dataset" title="Permalink to this heading">#</a></h1>
+<p>In this step, we shall import the Iris Flower dataset which is stored in my github repository as IrisDataset.csv and save it to the variable dataset. After this, we assign the 4 independent variables to X and the dependent variable ‘species’ to Y. The first 5 rows of the dataset are displayed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mk-gurucharan/Classification/master/IrisDataset.csv&#39;</span><span class="p">)</span>
@@ -403,7 +419,7 @@ In this step, we shall import the Iris Flower dataset which is stored in my gith
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-3dec6e0f-2035-4856-ae5d-e5733722b1a0">
+  <div id="df-ea830c29-5c37-4667-a472-ebf8d52a6c2f">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -474,7 +490,7 @@ In this step, we shall import the Iris Flower dataset which is stored in my gith
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-3dec6e0f-2035-4856-ae5d-e5733722b1a0')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-ea830c29-5c37-4667-a472-ebf8d52a6c2f')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -525,12 +541,12 @@ In this step, we shall import the Iris Flower dataset which is stored in my gith
 
       <script>
         const buttonEl =
-          document.querySelector('#df-3dec6e0f-2035-4856-ae5d-e5733722b1a0 button.colab-df-convert');
+          document.querySelector('#df-ea830c29-5c37-4667-a472-ebf8d52a6c2f button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-3dec6e0f-2035-4856-ae5d-e5733722b1a0');
+          const element = document.querySelector('#df-ea830c29-5c37-4667-a472-ebf8d52a6c2f');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -563,8 +579,10 @@ In this step, we shall import the Iris Flower dataset which is stored in my gith
 </div>
 </div>
 </div>
-<p>#Step 4: Feature Scaling
-The dataset is scaled down to a smaller range using the Feature Scaling option. In this, both the X_train and X_test values are scaled down to smaller values to improve the speed of the program.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="step-4-feature-scaling">
+<h1>Step 4: Feature Scaling<a class="headerlink" href="#step-4-feature-scaling" title="Permalink to this heading">#</a></h1>
+<p>The dataset is scaled down to a smaller range using the Feature Scaling option. In this, both the X_train and X_test values are scaled down to smaller values to improve the speed of the program.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
@@ -575,7 +593,9 @@ The dataset is scaled down to a smaller range using the Feature Scaling option. 
 </div>
 </div>
 </div>
-<p>#Step 5: Training the Naive Bayes Classification model on the Training Set</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="step-5-training-the-naive-bayes-classification-model-on-the-training-set">
+<h1>Step 5: Training the Naive Bayes Classification model on the Training Set<a class="headerlink" href="#step-5-training-the-naive-bayes-classification-model-on-the-training-set" title="Permalink to this heading">#</a></h1>
 <p>In this step, we introduce the class GaussianNB that is used from the sklearn.naive_bayes library. Here, we have used a Gaussian model, there are several other models such as Bernoulli, Categorical and Multinomial. Here, we assign the GaussianNB class to the variable classifier and fit the X_train and y_train values to it for training purpose.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -588,7 +608,9 @@ The dataset is scaled down to a smaller range using the Feature Scaling option. 
 <div class="cell_output docutils container">
 <div class="output text_html"><style>#sk-container-id-1 {color: black;background-color: white;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GaussianNB()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">GaussianNB</label><div class="sk-toggleable__content"><pre>GaussianNB()</pre></div></div></div></div></div></div></div>
 </div>
-<p>#Step 6: Predicting the Test set results</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="step-6-predicting-the-test-set-results">
+<h1>Step 6: Predicting the Test set results<a class="headerlink" href="#step-6-predicting-the-test-set-results" title="Permalink to this heading">#</a></h1>
 <p>Once the model is trained, we use the the classifier.predict() to predict the values for the Test set and the values predicted are stored to the variable y_pred.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -598,13 +620,12 @@ The dataset is scaled down to a smaller range using the Feature Scaling option. 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;,
-       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;virginica&#39;,
-       &#39;virginica&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;,
-       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
-       &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
-       &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;],
-      dtype=&#39;&lt;U10&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;virginica&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;,
+       &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
+       &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
+       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
+       &#39;setosa&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;versicolor&#39;,
+       &#39;virginica&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;setosa&#39;], dtype=&#39;&lt;U10&#39;)
 </pre></div>
 </div>
 </div>
@@ -624,18 +645,20 @@ The dataset is scaled down to a smaller range using the Feature Scaling option. 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy :  0.9666666666666667
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy :  0.9333333333333333
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[10,  0,  0],
-       [ 0,  8,  0],
-       [ 0,  1, 11]])
+       [ 0,  9,  0],
+       [ 0,  2,  9]])
 </pre></div>
 </div>
 </div>
 </div>
-<p>#Step 8: Comparing the Real Values with Predicted Values
-In this step, a Pandas DataFrame is created to compare the classified values of both the original Test set (y_test) and the predicted results (y_pred).</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="step-8-comparing-the-real-values-with-predicted-values">
+<h1>Step 8: Comparing the Real Values with Predicted Values<a class="headerlink" href="#step-8-comparing-the-real-values-with-predicted-values" title="Permalink to this heading">#</a></h1>
+<p>In this step, a Pandas DataFrame is created to compare the classified values of both the original Test set (y_test) and the predicted results (y_pred).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Real Values&#39;</span><span class="p">:</span><span class="n">y_test</span><span class="p">,</span> <span class="s1">&#39;Predicted Values&#39;</span><span class="p">:</span><span class="n">y_pred</span><span class="p">})</span>
@@ -645,7 +668,7 @@ In this step, a Pandas DataFrame is created to compare the classified values of 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-d36b521c-af24-4d69-bb7f-1abaaf016c90">
+  <div id="df-90941fc2-25e9-427e-923c-062375c18a5b">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -672,8 +695,8 @@ In this step, a Pandas DataFrame is created to compare the classified values of 
   <tbody>
     <tr>
       <th>0</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>1</th>
@@ -682,8 +705,8 @@ In this step, a Pandas DataFrame is created to compare the classified values of 
     </tr>
     <tr>
       <th>2</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>3</th>
@@ -692,18 +715,18 @@ In this step, a Pandas DataFrame is created to compare the classified values of 
     </tr>
     <tr>
       <th>4</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>virginica</td>
+      <td>versicolor</td>
       <td>versicolor</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>7</th>
@@ -712,8 +735,8 @@ In this step, a Pandas DataFrame is created to compare the classified values of 
     </tr>
     <tr>
       <th>8</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>9</th>
@@ -722,8 +745,8 @@ In this step, a Pandas DataFrame is created to compare the classified values of 
     </tr>
     <tr>
       <th>10</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>11</th>
@@ -732,13 +755,13 @@ In this step, a Pandas DataFrame is created to compare the classified values of 
     </tr>
     <tr>
       <th>12</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>14</th>
@@ -747,8 +770,8 @@ In this step, a Pandas DataFrame is created to compare the classified values of 
     </tr>
     <tr>
       <th>15</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>16</th>
@@ -757,18 +780,18 @@ In this step, a Pandas DataFrame is created to compare the classified values of 
     </tr>
     <tr>
       <th>17</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>19</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>20</th>
@@ -797,13 +820,13 @@ In this step, a Pandas DataFrame is created to compare the classified values of 
     </tr>
     <tr>
       <th>25</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>26</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>27</th>
@@ -812,18 +835,18 @@ In this step, a Pandas DataFrame is created to compare the classified values of 
     </tr>
     <tr>
       <th>28</th>
-      <td>versicolor</td>
+      <td>virginica</td>
       <td>versicolor</td>
     </tr>
     <tr>
       <th>29</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-d36b521c-af24-4d69-bb7f-1abaaf016c90')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-90941fc2-25e9-427e-923c-062375c18a5b')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -874,12 +897,12 @@ In this step, a Pandas DataFrame is created to compare the classified values of 
 
       <script>
         const buttonEl =
-          document.querySelector('#df-d36b521c-af24-4d69-bb7f-1abaaf016c90 button.colab-df-convert');
+          document.querySelector('#df-90941fc2-25e9-427e-923c-062375c18a5b button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-d36b521c-af24-4d69-bb7f-1abaaf016c90');
+          const element = document.querySelector('#df-90941fc2-25e9-427e-923c-062375c18a5b');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -964,8 +987,14 @@ In this step, a Pandas DataFrame is created to compare the classified values of 
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tugas NaiveBayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-importing-the-libraries">Step 1: Importing the Libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-importing-the-dataset">Step 2: Importing the dataset</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-splitting-the-dataset-into-the-training-set-and-test-set">Step 3: Splitting the dataset into the Training set and Test set</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-feature-scaling">Step 4: Feature Scaling</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-training-the-naive-bayes-classification-model-on-the-training-set">Step 5: Training the Naive Bayes Classification model on the Training Set</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-predicting-the-test-set-results">Step 6: Predicting the Test set results</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-confusion-matrix-and-accuracy">Step 7: Confusion Matrix and Accuracy</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-comparing-the-real-values-with-predicted-values">Step 8: Comparing the Real Values with Predicted Values</a></li>
 </ul>
 
   </nav></div>
