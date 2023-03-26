@@ -54,6 +54,8 @@
 - selesai
 
 # Catatan Tambahan :
+##  tugas penambangan data
+
 # Cara memasukkan data CSV ke mysql (XAMMP)
 1. Buka terlebih dahulu localhost anda 
 2. Aktifkan Xampp anda (mysql)
