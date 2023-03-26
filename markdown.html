@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; My sample book</title>
+    <title>Cara memasukkan data CSV ke Excel &#8212; My sample book</title>
   
   
   
@@ -155,7 +155,15 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Cara memasukkan data CSV ke Excel</a></li>
+
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
@@ -341,7 +349,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Cara memasukkan data CSV ke Excel</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -350,7 +358,15 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Cara memasukkan data CSV ke Excel</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-memasukkan-data-csv-ke-power-bi">Cara memasukkan data CSV ke Power BI</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-load-data-dari-mysql-database-ke-power-bi">Cara  Load Data Dari MySql DataBase Ke Power BI</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-load-data-dari-postgrasql-local">Cara Load Data Dari PostgraSQL local</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-load-data-dari-postgrasql-elephantsql">Cara Load Data Dari PostgraSQL (ElephantSql)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#catatan-tambahan">Catatan Tambahan :</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-memasukkan-data-csv-ke-mysql-xammp">Cara memasukkan data CSV ke mysql (XAMMP)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-membuat-table-di-postgresql-dan-melakukan-import-data">Cara membuat table di postgresql dan melakukan import data</a></li>
 </ul>
 
             </nav>
@@ -363,7 +379,97 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  
+  <div class="tex2jax_ignore mathjax_ignore section" id="cara-memasukkan-data-csv-ke-excel">
+<h1>Cara memasukkan data CSV ke Excel<a class="headerlink" href="#cara-memasukkan-data-csv-ke-excel" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Buka Excel pilih menu data lalu click get data</p></li>
+<li><p>Pilih Form file lalu click file CSV dan masukkan filenya</p></li>
+<li><p>Selanjutnya click load</p></li>
+<li><p>Selesai</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="cara-memasukkan-data-csv-ke-power-bi">
+<h1>Cara memasukkan data CSV ke Power BI<a class="headerlink" href="#cara-memasukkan-data-csv-ke-power-bi" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Buka power BI terlebih dahulu</p></li>
+<li><p>Click menu Get Data</p></li>
+<li><p>Pilih text/Csv</p></li>
+<li><p>Selanjutnya masukkan data CSV</p></li>
+<li><p>Selanjutnya Click load</p></li>
+<li><p>Selesai</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="cara-load-data-dari-mysql-database-ke-power-bi">
+<h1>Cara  Load Data Dari MySql DataBase Ke Power BI<a class="headerlink" href="#cara-load-data-dari-mysql-database-ke-power-bi" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Terlebih dahulu pastikan anda sudah membuat database di mysql anda</p></li>
+<li><p>Selanjutnya Buka power BI</p></li>
+<li><p>Click menu Get Data dan more</p></li>
+<li><p>Click option database</p></li>
+<li><p>Selanjutnya click Mysql Database selanjutnya click connect</p></li>
+<li><p>Masukkan server dan database anda
+Dimana Server : localhost
+Database : database iris</p></li>
+<li><p>Selanjutnya pilih database
+masukkan user name : root</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="cara-load-data-dari-postgrasql-local">
+<h1>Cara Load Data Dari PostgraSQL local<a class="headerlink" href="#cara-load-data-dari-postgrasql-local" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Buka power BI</p></li>
+<li><p>Click menu Get Data dan more</p></li>
+<li><p>Click option database</p></li>
+<li><p>Selanjutnya click postgresql Database selanjutnya click connect</p></li>
+<li><p>Selanjutnya masukkan server anda dan nama database anda
+Server : localhost:5432
+Database : databaseiris
+selanjutnya click OK</p></li>
+<li><p>Selanjutnya masukkan username :postgres dan password anda dan click connect lalu tekan ok</p></li>
+<li><p>Selanjutnya centang publiciris dan click load</p></li>
+<li><p>selesai</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="cara-load-data-dari-postgrasql-elephantsql">
+<h1>Cara Load Data Dari PostgraSQL (ElephantSql)<a class="headerlink" href="#cara-load-data-dari-postgrasql-elephantsql" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Buka power BI</p></li>
+<li><p>Click menu Get Data dan more</p></li>
+<li><p>Click option database</p></li>
+<li><p>Lalu click postgresql Database selanjutnya click connect</p></li>
+<li><p>Lalu masukkan server anda dan nama database anda
+Server : <a class="reference external" href="http://mel.db.elephantsql.com">mel.db.elephantsql.com</a>
+Database : omjbcybl
+selanjutnya click OK</p></li>
+<li><p>Selanjutnya masukkan username dan password anda</p></li>
+<li><p>Selanjutnya centang publiciris dan click load</p></li>
+<li><p>selesai</p></li>
+</ul>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="catatan-tambahan">
+<h1>Catatan Tambahan :<a class="headerlink" href="#catatan-tambahan" title="Permalink to this heading">#</a></h1>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="cara-memasukkan-data-csv-ke-mysql-xammp">
+<h1>Cara memasukkan data CSV ke mysql (XAMMP)<a class="headerlink" href="#cara-memasukkan-data-csv-ke-mysql-xammp" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Buka terlebih dahulu localhost anda</p></li>
+<li><p>Aktifkan Xampp anda (mysql)</p></li>
+<li><p>Selanjutnya buat database anda</p></li>
+<li><p>lalu impor data CSV anda</p></li>
+<li><p>Selesai</p></li>
+</ol>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="cara-membuat-table-di-postgresql-dan-melakukan-import-data">
+<h1>Cara membuat table di postgresql dan melakukan import data<a class="headerlink" href="#cara-membuat-table-di-postgresql-dan-melakukan-import-data" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>Click database anda pilih Schemas-public selanjutnya click table dan tekan kiri lalu qeury table</p></li>
+<li><p>Buatlah table dengann menggunakan kode Create data</p></li>
+<li><p>Selanjutnya untuk mengimpor data pertama tama anda harus memastikan file pada preferences yang ada di binary paths sudah terisi</p></li>
+<li><p>selanjutnya tekan kiri pada table anda lalu click import data dan masukkan data anda</p></li>
+<li><p>selesai</p></li>
+</ol>
+</div>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -424,7 +530,15 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Cara memasukkan data CSV ke Excel</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-memasukkan-data-csv-ke-power-bi">Cara memasukkan data CSV ke Power BI</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-load-data-dari-mysql-database-ke-power-bi">Cara  Load Data Dari MySql DataBase Ke Power BI</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-load-data-dari-postgrasql-local">Cara Load Data Dari PostgraSQL local</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-load-data-dari-postgrasql-elephantsql">Cara Load Data Dari PostgraSQL (ElephantSql)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#catatan-tambahan">Catatan Tambahan :</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-memasukkan-data-csv-ke-mysql-xammp">Cara memasukkan data CSV ke mysql (XAMMP)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-membuat-table-di-postgresql-dan-melakukan-import-data">Cara membuat table di postgresql dan melakukan import data</a></li>
 </ul>
 
   </nav></div>
