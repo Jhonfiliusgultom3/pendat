@@ -1,1 +1,8 @@
-Selamat Datang 
+# Biodata Diri
+Nama        : Jhon Filius Gultom
+Nim         : 210411100019
+Alamat      : Graha Trunojoyo GG 4 Blok J
+J.Kelamanin : Laki-Laki 
+Agama       : Katolik
+Cita-Cita   : Pengusaha sukses 
+Hobi        : Bernyanyi, membaca buku
