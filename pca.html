@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; My sample book</title>
+    <title>PCA DATA IRIS &#8212; My sample book</title>
   
   
   
@@ -154,7 +154,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Tugas Penambangan Data</a></li>
 
 
@@ -174,6 +174,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1"><a class="reference internal" href="uts.html">UJIAN TENGAH SEMESTER</a></li>
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">PCA DATA IRIS</a></li>
 
 
 
@@ -360,7 +364,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>PCA DATA IRIS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -369,7 +373,11 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">PCA DATA IRIS</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#standarisasi-data">Standarisasi Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-proses-pca">Melakukan Proses PCA</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualiasi-pca">VISUALIASI PCA</a></li>
 </ul>
 
             </nav>
@@ -382,7 +390,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>#PCA DATA IRIS</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="pca-data-iris">
+<h1>PCA DATA IRIS<a class="headerlink" href="#pca-data-iris" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Melakukan impor library yang diperlukan</span>
@@ -404,7 +413,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-eb436f31-373c-4dcb-ab65-103f748b9b59">
+  <div id="df-c905e9f3-25f8-41f3-af03-db992546cd53">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -475,7 +484,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-eb436f31-373c-4dcb-ab65-103f748b9b59')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c905e9f3-25f8-41f3-af03-db992546cd53')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -526,12 +535,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-eb436f31-373c-4dcb-ab65-103f748b9b59 button.colab-df-convert');
+          document.querySelector('#df-c905e9f3-25f8-41f3-af03-db992546cd53 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-eb436f31-373c-4dcb-ab65-103f748b9b59');
+          const element = document.querySelector('#df-c905e9f3-25f8-41f3-af03-db992546cd53');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -552,8 +561,10 @@ document.write(`
   </div>
   </div></div>
 </div>
-<p>#Standarisasi Data
-Tujuan standarisasi data adalah untuk menyeimbangkan skala variabel agar variabel-variabel dengan skala yang lebih besar tidak mendominasi analisis atau model yang menggunakan data tersebut.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="standarisasi-data">
+<h1>Standarisasi Data<a class="headerlink" href="#standarisasi-data" title="Permalink to this heading">#</a></h1>
+<p>Tujuan standarisasi data adalah untuk menyeimbangkan skala variabel agar variabel-variabel dengan skala yang lebih besar tidak mendominasi analisis atau model yang menggunakan data tersebut.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Mengambil Nilai-Nilai Fitur yang ada</span>
@@ -588,7 +599,7 @@ Tujuan standarisasi data adalah untuk menyeimbangkan skala variabel agar variabe
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-a26256e6-416d-4ab1-a056-e2f451605821">
+  <div id="df-506ca894-73f6-47f0-b6df-e6509a57712e">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -653,7 +664,7 @@ Tujuan standarisasi data adalah untuk menyeimbangkan skala variabel agar variabe
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-a26256e6-416d-4ab1-a056-e2f451605821')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-506ca894-73f6-47f0-b6df-e6509a57712e')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -704,12 +715,12 @@ Tujuan standarisasi data adalah untuk menyeimbangkan skala variabel agar variabe
 
       <script>
         const buttonEl =
-          document.querySelector('#df-a26256e6-416d-4ab1-a056-e2f451605821 button.colab-df-convert');
+          document.querySelector('#df-506ca894-73f6-47f0-b6df-e6509a57712e button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-a26256e6-416d-4ab1-a056-e2f451605821');
+          const element = document.querySelector('#df-506ca894-73f6-47f0-b6df-e6509a57712e');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -730,8 +741,10 @@ Tujuan standarisasi data adalah untuk menyeimbangkan skala variabel agar variabe
   </div>
   </div></div>
 </div>
-<p>#Melakukan Proses PCA
-PCA (Principal Component Analysis) adalah metode statistik yang digunakan untuk mengurangi dimensi data dengan memproyeksikan data dari ruang dimensi tinggi ke ruang dimensi yang lebih rendah.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="melakukan-proses-pca">
+<h1>Melakukan Proses PCA<a class="headerlink" href="#melakukan-proses-pca" title="Permalink to this heading">#</a></h1>
+<p>PCA (Principal Component Analysis) adalah metode statistik yang digunakan untuk mengurangi dimensi data dengan memproyeksikan data dari ruang dimensi tinggi ke ruang dimensi yang lebih rendah.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#importing PCA library</span>
@@ -771,7 +784,7 @@ PCA (Principal Component Analysis) adalah metode statistik yang digunakan untuk 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-8e52b865-244a-4cde-a893-42a520b00952">
+  <div id="df-fa5c9dd0-dc32-4196-a048-306597555ec9">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -824,7 +837,7 @@ PCA (Principal Component Analysis) adalah metode statistik yang digunakan untuk 
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-8e52b865-244a-4cde-a893-42a520b00952')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-fa5c9dd0-dc32-4196-a048-306597555ec9')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -875,12 +888,12 @@ PCA (Principal Component Analysis) adalah metode statistik yang digunakan untuk 
 
       <script>
         const buttonEl =
-          document.querySelector('#df-8e52b865-244a-4cde-a893-42a520b00952 button.colab-df-convert');
+          document.querySelector('#df-fa5c9dd0-dc32-4196-a048-306597555ec9 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-8e52b865-244a-4cde-a893-42a520b00952');
+          const element = document.querySelector('#df-fa5c9dd0-dc32-4196-a048-306597555ec9');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -909,7 +922,7 @@ PCA (Principal Component Analysis) adalah metode statistik yang digunakan untuk 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-29f4e689-fb83-4fcf-90b4-818ee4adbf35">
+  <div id="df-bd536a3a-810f-4ad4-b74f-abd603a69c55">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -956,7 +969,7 @@ PCA (Principal Component Analysis) adalah metode statistik yang digunakan untuk 
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-29f4e689-fb83-4fcf-90b4-818ee4adbf35')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-bd536a3a-810f-4ad4-b74f-abd603a69c55')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1007,12 +1020,12 @@ PCA (Principal Component Analysis) adalah metode statistik yang digunakan untuk 
 
       <script>
         const buttonEl =
-          document.querySelector('#df-29f4e689-fb83-4fcf-90b4-818ee4adbf35 button.colab-df-convert');
+          document.querySelector('#df-bd536a3a-810f-4ad4-b74f-abd603a69c55 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-29f4e689-fb83-4fcf-90b4-818ee4adbf35');
+          const element = document.querySelector('#df-bd536a3a-810f-4ad4-b74f-abd603a69c55');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1043,7 +1056,7 @@ PCA (Principal Component Analysis) adalah metode statistik yang digunakan untuk 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-c2d40bb1-3d7e-4184-aff5-7c7015bc9068">
+  <div id="df-24b5cad9-2ae2-46d6-8898-bd923aa3fa33">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1102,7 +1115,7 @@ PCA (Principal Component Analysis) adalah metode statistik yang digunakan untuk 
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-c2d40bb1-3d7e-4184-aff5-7c7015bc9068')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-24b5cad9-2ae2-46d6-8898-bd923aa3fa33')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1153,12 +1166,12 @@ PCA (Principal Component Analysis) adalah metode statistik yang digunakan untuk 
 
       <script>
         const buttonEl =
-          document.querySelector('#df-c2d40bb1-3d7e-4184-aff5-7c7015bc9068 button.colab-df-convert');
+          document.querySelector('#df-24b5cad9-2ae2-46d6-8898-bd923aa3fa33 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-c2d40bb1-3d7e-4184-aff5-7c7015bc9068');
+          const element = document.querySelector('#df-24b5cad9-2ae2-46d6-8898-bd923aa3fa33');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1179,8 +1192,10 @@ PCA (Principal Component Analysis) adalah metode statistik yang digunakan untuk 
   </div>
   </div></div>
 </div>
-<p>#VISUALIASI PCA
-Visualisasi PCA adalah proses menggambarkan hasil transformasi PCA dalam bentuk grafik atau plot untuk membantu pemahaman dan interpretasi terhadap variasi data yang dijelaskan oleh komponen utama.</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="visualiasi-pca">
+<h1>VISUALIASI PCA<a class="headerlink" href="#visualiasi-pca" title="Permalink to this heading">#</a></h1>
+<p>Visualisasi PCA adalah proses menggambarkan hasil transformasi PCA dalam bentuk grafik atau plot untuk membantu pemahaman dan interpretasi terhadap variasi data yang dijelaskan oleh komponen utama.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualisasi PCA</span>
@@ -1212,6 +1227,7 @@ Visualisasi PCA adalah proses menggambarkan hasil transformasi PCA dalam bentuk 
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.72770452, 0.23030523])
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1273,7 +1289,11 @@ Visualisasi PCA adalah proses menggambarkan hasil transformasi PCA dalam bentuk 
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">PCA DATA IRIS</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#standarisasi-data">Standarisasi Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#melakukan-proses-pca">Melakukan Proses PCA</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualiasi-pca">VISUALIASI PCA</a></li>
 </ul>
 
   </nav></div>
