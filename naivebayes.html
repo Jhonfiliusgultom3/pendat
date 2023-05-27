@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tugas Naivebayes &#8212; My sample book</title>
+    <title>NAIVEBAYES (DATA IRIS) &#8212; My sample book</title>
   
   
   
@@ -63,8 +63,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'naivebayes';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="UJIAN TENGAH SEMESTER" href="uts.html" />
-    <link rel="prev" title="Tugas Penambangan Data" href="markdown.html" />
+    <link rel="next" title="PCA DATA IRIS" href="pca.html" />
+    <link rel="prev" title="TUGAS TUTORIAL" href="markdown.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -151,12 +151,15 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Biodata Diri
+                    ABOUT ME
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Tugas Penambangan Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pengantar.html">PENGENALAN PENAMBANGAN DATA</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">TUGAS TUTORIAL</a></li>
 
 
 
@@ -165,20 +168,20 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tugas Naivebayes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">NAIVEBAYES (DATA IRIS)</a></li>
 
 
 
 
 
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="uts.html">UJIAN TENGAH SEMESTER</a></li>
 
 
 
 <li class="toctree-l1"><a class="reference internal" href="pca.html">PCA DATA IRIS</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="uts.html">UJIAN TENGAH SEMESTER</a></li>
 
 
 
@@ -396,7 +399,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tugas Naivebayes</h1>
+    <h1>NAIVEBAYES (DATA IRIS)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -406,7 +409,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tugas Naivebayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">NAIVEBAYES (DATA IRIS)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-importing-the-libraries">Step 1: Importing the Libraries</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-importing-the-dataset">Step 2: Importing the dataset</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-splitting-the-dataset-into-the-training-set-and-test-set">Step 3: Splitting the dataset into the Training set and Test set</a></li>
@@ -427,8 +430,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="tugas-naivebayes">
-<h1>Tugas Naivebayes<a class="headerlink" href="#tugas-naivebayes" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="naivebayes-data-iris">
+<h1>NAIVEBAYES (DATA IRIS)<a class="headerlink" href="#naivebayes-data-iris" title="Permalink to this heading">#</a></h1>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="step-1-importing-the-libraries">
 <h1>Step 1: Importing the Libraries<a class="headerlink" href="#step-1-importing-the-libraries" title="Permalink to this heading">#</a></h1>
@@ -457,7 +460,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-c4ff358a-3d26-46c1-bc19-b15e325e3680">
+  <div id="df-51420b7e-eb81-429f-b4b2-7217e7298169">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -528,7 +531,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-c4ff358a-3d26-46c1-bc19-b15e325e3680')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-51420b7e-eb81-429f-b4b2-7217e7298169')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -579,12 +582,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-c4ff358a-3d26-46c1-bc19-b15e325e3680 button.colab-df-convert');
+          document.querySelector('#df-51420b7e-eb81-429f-b4b2-7217e7298169 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-c4ff358a-3d26-46c1-bc19-b15e325e3680');
+          const element = document.querySelector('#df-51420b7e-eb81-429f-b4b2-7217e7298169');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -658,12 +661,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;virginica&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
-       &#39;virginica&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
-       &#39;setosa&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;,
-       &#39;versicolor&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
-       &#39;virginica&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
-       &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;virginica&#39;],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;virginica&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;,
+       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
+       &#39;setosa&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;virginica&#39;,
+       &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
+       &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
+       &#39;setosa&#39;, &#39;virginica&#39;, &#39;setosa&#39;, &#39;versicolor&#39;, &#39;setosa&#39;],
       dtype=&#39;&lt;U10&#39;)
 </pre></div>
 </div>
@@ -687,9 +690,9 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy :  1.0
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[13,  0,  0],
-       [ 0,  9,  0],
-       [ 0,  0,  8]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[12,  0,  0],
+       [ 0,  8,  0],
+       [ 0,  0, 10]])
 </pre></div>
 </div>
 </div>
@@ -707,7 +710,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-63b01440-abcc-45cc-ad48-35a0bbd48bf4">
+  <div id="df-5839d543-b980-4587-a5fe-4ad80f337463">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -739,8 +742,8 @@ document.write(`
     </tr>
     <tr>
       <th>1</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>2</th>
@@ -749,8 +752,8 @@ document.write(`
     </tr>
     <tr>
       <th>3</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>4</th>
@@ -759,13 +762,13 @@ document.write(`
     </tr>
     <tr>
       <th>5</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>7</th>
@@ -774,13 +777,13 @@ document.write(`
     </tr>
     <tr>
       <th>8</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>10</th>
@@ -789,33 +792,33 @@ document.write(`
     </tr>
     <tr>
       <th>11</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>15</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>17</th>
@@ -829,18 +832,18 @@ document.write(`
     </tr>
     <tr>
       <th>19</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>20</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>21</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
     </tr>
     <tr>
       <th>22</th>
@@ -849,23 +852,23 @@ document.write(`
     </tr>
     <tr>
       <th>23</th>
-      <td>setosa</td>
-      <td>setosa</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>24</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>25</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
     <tr>
       <th>26</th>
-      <td>versicolor</td>
-      <td>versicolor</td>
+      <td>virginica</td>
+      <td>virginica</td>
     </tr>
     <tr>
       <th>27</th>
@@ -879,13 +882,13 @@ document.write(`
     </tr>
     <tr>
       <th>29</th>
-      <td>virginica</td>
-      <td>virginica</td>
+      <td>setosa</td>
+      <td>setosa</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-63b01440-abcc-45cc-ad48-35a0bbd48bf4')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-5839d543-b980-4587-a5fe-4ad80f337463')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -936,12 +939,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-63b01440-abcc-45cc-ad48-35a0bbd48bf4 button.colab-df-convert');
+          document.querySelector('#df-5839d543-b980-4587-a5fe-4ad80f337463 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-63b01440-abcc-45cc-ad48-35a0bbd48bf4');
+          const element = document.querySelector('#df-5839d543-b980-4587-a5fe-4ad80f337463');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1001,15 +1004,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tugas Penambangan Data</p>
+        <p class="prev-next-title">TUGAS TUTORIAL</p>
       </div>
     </a>
     <a class="right-next"
-       href="uts.html"
+       href="pca.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">UJIAN TENGAH SEMESTER</p>
+        <p class="prev-next-title">PCA DATA IRIS</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1031,7 +1034,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Tugas Naivebayes</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">NAIVEBAYES (DATA IRIS)</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-importing-the-libraries">Step 1: Importing the Libraries</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-importing-the-dataset">Step 2: Importing the dataset</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-splitting-the-dataset-into-the-training-set-and-test-set">Step 3: Splitting the dataset into the Training set and Test set</a></li>
@@ -1055,7 +1058,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By 21-019 JHON FILIUS GULTOM
 </p>
 
   </div>

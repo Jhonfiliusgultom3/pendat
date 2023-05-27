@@ -1,4 +1,4 @@
-# Tugas Penambangan Data
+# TUGAS TUTORIAL
 # Cara memasukkan data CSV ke Excel
 
 - Buka Excel pilih menu data lalu click get data
