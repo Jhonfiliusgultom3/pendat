@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MLP CLASSIFIER &#8212; My sample book</title>
+    <title>MLP CLASSIFIER (ANN) &#8212; My sample book</title>
   
   
   
@@ -181,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tree.html">DECISION TREE UNTUK DATA WEATHER (EXCELL)</a></li>
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">MLP CLASSIFIER</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">MLP CLASSIFIER (ANN)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pca.html">PCA DATA IRIS</a></li>
 
 
@@ -404,7 +404,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>MLP CLASSIFIER</h1>
+    <h1>MLP CLASSIFIER (ANN)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -428,8 +428,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="mlp-classifier">
-<h1>MLP CLASSIFIER<a class="headerlink" href="#mlp-classifier" title="Permalink to this heading">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="mlp-classifier-ann">
+<h1>MLP CLASSIFIER (ANN)<a class="headerlink" href="#mlp-classifier-ann" title="Permalink to this heading">#</a></h1>
 <p>atau (Multi-Layer Perceptron Classifier) adalah salah satu jenis model yang digunakan dalam machine learning untuk masalah klasifikasi. MLP Classifier adalah bentuk yang lebih umum dari Jaringan Saraf Tiruan (Artificial Neural Network) dengan beberapa lapisan tersembunyi (hidden layers) yang menghubungkan antara input dan output.</p>
 <p>MLP Classifier menggunakan algoritma pembelajaran yang disebut backpropagation untuk melatih modelnya. Proses pelatihan melibatkan iterasi berulang dalam menghitung dan memperbarui bobot dan bias di setiap lapisan hingga model dapat mempelajari pola yang tepat dalam data.</p>
 <div class="section" id="import-librari">
@@ -461,7 +461,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-d5d604d2-9a19-4731-a0c0-f1e2083899d8">
+  <div id="df-8b89ed44-1317-4163-9550-c59987229998">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -652,7 +652,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-d5d604d2-9a19-4731-a0c0-f1e2083899d8')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-8b89ed44-1317-4163-9550-c59987229998')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -703,12 +703,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-d5d604d2-9a19-4731-a0c0-f1e2083899d8 button.colab-df-convert');
+          document.querySelector('#df-8b89ed44-1317-4163-9550-c59987229998 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-d5d604d2-9a19-4731-a0c0-f1e2083899d8');
+          const element = document.querySelector('#df-8b89ed44-1317-4163-9550-c59987229998');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -853,14 +853,14 @@ Iteration 73, loss = 0.50637570
 Iteration 74, loss = 0.50234988
 Iteration 75, loss = 0.49851739
 Iteration 76, loss = 0.49479519
-Iteration 77, loss = 0.49112572
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 77, loss = 0.49112572
 Iteration 78, loss = 0.48750079
 Iteration 79, loss = 0.48392987
 Iteration 80, loss = 0.48041848
 Iteration 81, loss = 0.47694996
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 82, loss = 0.47353018
+Iteration 82, loss = 0.47353018
 Iteration 83, loss = 0.47016459
 Iteration 84, loss = 0.46683878
 Iteration 85, loss = 0.46355343
@@ -920,7 +920,9 @@ Iteration 138, loss = 0.33285174
 Iteration 139, loss = 0.33115000
 Iteration 140, loss = 0.32946382
 Iteration 141, loss = 0.32779302
-Iteration 142, loss = 0.32613932
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 142, loss = 0.32613932
 Iteration 143, loss = 0.32449994
 Iteration 144, loss = 0.32287645
 Iteration 145, loss = 0.32126752
@@ -938,9 +940,7 @@ Iteration 156, loss = 0.30439221
 Iteration 157, loss = 0.30292948
 Iteration 158, loss = 0.30147712
 Iteration 159, loss = 0.30003470
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 160, loss = 0.29860283
+Iteration 160, loss = 0.29860283
 Iteration 161, loss = 0.29718110
 Iteration 162, loss = 0.29576910
 Iteration 163, loss = 0.29436680
@@ -1006,7 +1006,9 @@ Iteration 222, loss = 0.22559475
 Iteration 223, loss = 0.22463300
 Iteration 224, loss = 0.22367732
 Iteration 225, loss = 0.22272788
-Iteration 226, loss = 0.22178484
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 226, loss = 0.22178484
 Iteration 227, loss = 0.22084794
 Training loss did not improve more than tol=0.001000 for 10 consecutive epochs. Stopping.
 </pre></div>
@@ -1101,7 +1103,7 @@ Name: variety, dtype: object [&#39;Iris-versicolor&#39; &#39;Iris-virginica&#39;
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-139d3e55-aa1d-4f02-8ad9-d37c33c31dbf">
+  <div id="df-e7d691dd-ca9e-4ffe-954b-7c557bf341d9">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1173,7 +1175,7 @@ Name: variety, dtype: object [&#39;Iris-versicolor&#39; &#39;Iris-virginica&#39;
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-139d3e55-aa1d-4f02-8ad9-d37c33c31dbf')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-e7d691dd-ca9e-4ffe-954b-7c557bf341d9')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1224,12 +1226,12 @@ Name: variety, dtype: object [&#39;Iris-versicolor&#39; &#39;Iris-virginica&#39;
 
       <script>
         const buttonEl =
-          document.querySelector('#df-139d3e55-aa1d-4f02-8ad9-d37c33c31dbf button.colab-df-convert');
+          document.querySelector('#df-e7d691dd-ca9e-4ffe-954b-7c557bf341d9 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-139d3e55-aa1d-4f02-8ad9-d37c33c31dbf');
+          const element = document.querySelector('#df-e7d691dd-ca9e-4ffe-954b-7c557bf341d9');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
