@@ -63,7 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'ann';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="PCA DATA IRIS" href="pca.html" />
+    <link rel="next" title="PCA DATA IRIS (NAIVEBAYES)" href="pca.html" />
     <link rel="prev" title="DECISION TREE UNTUK DATA WEATHER (EXCELL)" href="tree.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,11 +183,14 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">MLP CLASSIFIER (ANN)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pca.html">PCA DATA IRIS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pca.html">PCA DATA IRIS (NAIVEBAYES)</a></li>
 
 
 
 
+<li class="toctree-l1"><a class="reference internal" href="pca_knn.html">PCA DATA IRIS (KNN)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pca_decision.html">PCA DATA IRIS (DECISION TREE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pca_ann.html">PCA DATA IRIS (ANN)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uts.html">UJIAN TENGAH SEMESTER (NAIVE BAYES DAN KNN)</a></li>
 
 
@@ -462,7 +465,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-4d7abbd4-a97b-49b3-911b-5cbd5c47aeac">
+  <div id="df-d6e70770-603c-4695-904d-7139ad8f6bd4">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -653,7 +656,7 @@ document.write(`
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-4d7abbd4-a97b-49b3-911b-5cbd5c47aeac')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-d6e70770-603c-4695-904d-7139ad8f6bd4')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -704,12 +707,12 @@ document.write(`
 
       <script>
         const buttonEl =
-          document.querySelector('#df-4d7abbd4-a97b-49b3-911b-5cbd5c47aeac button.colab-df-convert');
+          document.querySelector('#df-d6e70770-603c-4695-904d-7139ad8f6bd4 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-4d7abbd4-a97b-49b3-911b-5cbd5c47aeac');
+          const element = document.querySelector('#df-d6e70770-603c-4695-904d-7139ad8f6bd4');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -810,9 +813,7 @@ Iteration 29, loss = 0.76600144
 Iteration 30, loss = 0.75788922
 Iteration 31, loss = 0.74964361
 Iteration 32, loss = 0.74129784
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 33, loss = 0.73289726
+Iteration 33, loss = 0.73289726
 Iteration 34, loss = 0.72455418
 Iteration 35, loss = 0.71638369
 Iteration 36, loss = 0.70854002
@@ -823,7 +824,9 @@ Iteration 40, loss = 0.67997135
 Iteration 41, loss = 0.67340096
 Iteration 42, loss = 0.66697897
 Iteration 43, loss = 0.66063500
-Iteration 44, loss = 0.65437581
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 44, loss = 0.65437581
 Iteration 45, loss = 0.64814654
 Iteration 46, loss = 0.64194844
 Iteration 47, loss = 0.63585933
@@ -851,9 +854,7 @@ Iteration 68, loss = 0.52784837
 Iteration 69, loss = 0.52362849
 Iteration 70, loss = 0.51935732
 Iteration 71, loss = 0.51501962
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 72, loss = 0.51061267
+Iteration 72, loss = 0.51061267
 Iteration 73, loss = 0.50637570
 Iteration 74, loss = 0.50234988
 Iteration 75, loss = 0.49851739
@@ -866,7 +867,9 @@ Iteration 81, loss = 0.47694996
 Iteration 82, loss = 0.47353018
 Iteration 83, loss = 0.47016459
 Iteration 84, loss = 0.46683878
-Iteration 85, loss = 0.46355343
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 85, loss = 0.46355343
 Iteration 86, loss = 0.46029462
 Iteration 87, loss = 0.45704750
 Iteration 88, loss = 0.45382821
@@ -891,9 +894,7 @@ Iteration 106, loss = 0.39802516
 Iteration 107, loss = 0.39550492
 Iteration 108, loss = 0.39307375
 Iteration 109, loss = 0.39068825
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 110, loss = 0.38835551
+Iteration 110, loss = 0.38835551
 Iteration 111, loss = 0.38606317
 Iteration 112, loss = 0.38380201
 Iteration 113, loss = 0.38157179
@@ -903,7 +904,9 @@ Iteration 116, loss = 0.37503728
 Iteration 117, loss = 0.37289997
 Iteration 118, loss = 0.37078269
 Iteration 119, loss = 0.36868845
-Iteration 120, loss = 0.36661903
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 120, loss = 0.36661903
 Iteration 121, loss = 0.36456953
 Iteration 122, loss = 0.36254246
 Iteration 123, loss = 0.36053795
@@ -935,11 +938,11 @@ Iteration 148, loss = 0.31651934
 Iteration 149, loss = 0.31496161
 Iteration 150, loss = 0.31341698
 Iteration 151, loss = 0.31188388
+Iteration 152, loss = 0.31036196
+Iteration 153, loss = 0.30885160
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 152, loss = 0.31036196
-Iteration 153, loss = 0.30885160
-Iteration 154, loss = 0.30735329
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 154, loss = 0.30735329
 Iteration 155, loss = 0.30586652
 Iteration 156, loss = 0.30439221
 Iteration 157, loss = 0.30292948
@@ -980,10 +983,10 @@ Iteration 191, loss = 0.25858907
 Iteration 192, loss = 0.25742446
 Iteration 193, loss = 0.25626695
 Iteration 194, loss = 0.25511614
+Iteration 195, loss = 0.25397240
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 195, loss = 0.25397240
-Iteration 196, loss = 0.25283528
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 196, loss = 0.25283528
 Iteration 197, loss = 0.25170456
 Iteration 198, loss = 0.25058058
 Iteration 199, loss = 0.24946362
@@ -1108,7 +1111,7 @@ Name: variety, dtype: object [&#39;Iris-versicolor&#39; &#39;Iris-virginica&#39;
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-6f0bd106-acd4-4dee-b4dc-3b7a630e37df">
+  <div id="df-3a960e81-d444-4f1c-a74b-424e07cc18f3">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1180,7 +1183,7 @@ Name: variety, dtype: object [&#39;Iris-versicolor&#39; &#39;Iris-virginica&#39;
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-6f0bd106-acd4-4dee-b4dc-3b7a630e37df')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-3a960e81-d444-4f1c-a74b-424e07cc18f3')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -1231,12 +1234,12 @@ Name: variety, dtype: object [&#39;Iris-versicolor&#39; &#39;Iris-virginica&#39;
 
       <script>
         const buttonEl =
-          document.querySelector('#df-6f0bd106-acd4-4dee-b4dc-3b7a630e37df button.colab-df-convert');
+          document.querySelector('#df-3a960e81-d444-4f1c-a74b-424e07cc18f3 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-6f0bd106-acd4-4dee-b4dc-3b7a630e37df');
+          const element = document.querySelector('#df-3a960e81-d444-4f1c-a74b-424e07cc18f3');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1325,7 +1328,7 @@ Name: variety, dtype: object [&#39;Iris-versicolor&#39; &#39;Iris-virginica&#39;
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">PCA DATA IRIS</p>
+        <p class="prev-next-title">PCA DATA IRIS (NAIVEBAYES)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
