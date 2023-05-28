@@ -1,0 +1,1399 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MLP CLASSIFIER &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ann';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="PCA DATA IRIS" href="pca.html" />
+    <link rel="prev" title="DECISION TREE UNTUK DATA WEATHER (EXCELL)" href="tree.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/jhon.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/jhon.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    ABOUT ME
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pengantar.html">PENGENALAN PENAMBANGAN DATA</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">LOAD DATA</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="tugas.html">EXPLORASI DATA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="naivebayes.html">NAIVEBAYES (DATA IRIS)</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="tree.html">DECISION TREE UNTUK DATA WEATHER (EXCELL)</a></li>
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">MLP CLASSIFIER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pca.html">PCA DATA IRIS</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="uts.html">UJIAN TENGAH SEMESTER (NAIVE BAYES DAN KNN)</a></li>
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Jhonfiliusgultom3/pendat/blob/gh-pages/_sources/ann.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Jhonfiliusgultom3/pendat" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Jhonfiliusgultom3/pendat/issues/new?title=Issue%20on%20page%20%2Fann.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ann.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MLP CLASSIFIER</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librari"><em><strong>Import Librari</strong></em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membagi-data-menjadi-data-latih-dan-uji"><em><strong>Membagi data menjadi data latih dan uji</strong></em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-akurasi"><em><strong>Menghitung akurasi</strong></em></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="mlp-classifier">
+<h1>MLP CLASSIFIER<a class="headerlink" href="#mlp-classifier" title="Permalink to this heading">#</a></h1>
+<p>atau (Multi-Layer Perceptron Classifier) adalah salah satu jenis model yang digunakan dalam machine learning untuk masalah klasifikasi. MLP Classifier adalah bentuk yang lebih umum dari Jaringan Saraf Tiruan (Artificial Neural Network) dengan beberapa lapisan tersembunyi (hidden layers) yang menghubungkan antara input dan output.</p>
+<p>MLP Classifier menggunakan algoritma pembelajaran yang disebut backpropagation untuk melatih modelnya. Proses pelatihan melibatkan iterasi berulang dalam menghitung dan memperbarui bobot dan bias di setiap lapisan hingga model dapat mempelajari pola yang tepat dalam data.</p>
+<div class="section" id="import-librari">
+<h2><em><strong>Import Librari</strong></em><a class="headerlink" href="#import-librari" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline 
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Membaca data Csv berbentuk url</span>
+<span class="n">data_iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Jhonfiliusgultom3/data/main/iris.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_iris</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-d5d604d2-9a19-4731-a0c0-f1e2083899d8">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal.length</th>
+      <th>sepal.width</th>
+      <th>petal.length</th>
+      <th>petal.width</th>
+      <th>variety</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>1.7</td>
+      <td>0.4</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>4.6</td>
+      <td>3.4</td>
+      <td>1.4</td>
+      <td>0.3</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>4.4</td>
+      <td>2.9</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>4.9</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.1</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>5.4</td>
+      <td>3.7</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>4.8</td>
+      <td>3.4</td>
+      <td>1.6</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4.8</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.1</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>4.3</td>
+      <td>3.0</td>
+      <td>1.1</td>
+      <td>0.1</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>5.8</td>
+      <td>4.0</td>
+      <td>1.2</td>
+      <td>0.2</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>5.7</td>
+      <td>4.4</td>
+      <td>1.5</td>
+      <td>0.4</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>1.3</td>
+      <td>0.4</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.3</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>5.7</td>
+      <td>3.8</td>
+      <td>1.7</td>
+      <td>0.3</td>
+      <td>Iris-setosa</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>5.1</td>
+      <td>3.8</td>
+      <td>1.5</td>
+      <td>0.3</td>
+      <td>Iris-setosa</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-d5d604d2-9a19-4731-a0c0-f1e2083899d8')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-d5d604d2-9a19-4731-a0c0-f1e2083899d8 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-d5d604d2-9a19-4731-a0c0-f1e2083899d8');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">data_iris</span><span class="p">[</span><span class="s1">&#39;variety&#39;</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">data_iris</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;variety&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="membagi-data-menjadi-data-latih-dan-uji">
+<h2><em><strong>Membagi data menjadi data latih dan uji</strong></em><a class="headerlink" href="#membagi-data-menjadi-data-latih-dan-uji" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#untuk inisialisasi objek MLP Classifier dengan beberapa parameter yang ditentukan</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span>
+                     <span class="n">solver</span><span class="o">=</span><span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>  <span class="n">random_state</span><span class="o">=</span><span class="mi">21</span><span class="p">,</span><span class="n">tol</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="menghitung-akurasi">
+<h2><em><strong>Menghitung akurasi</strong></em><a class="headerlink" href="#menghitung-akurasi" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred</span><span class="o">=</span><span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 1, loss = 1.15628816
+Iteration 2, loss = 1.13879865
+Iteration 3, loss = 1.11460589
+Iteration 4, loss = 1.08579571
+Iteration 5, loss = 1.05543892
+Iteration 6, loss = 1.02620094
+Iteration 7, loss = 0.99885579
+Iteration 8, loss = 0.97368819
+Iteration 9, loss = 0.95153758
+Iteration 10, loss = 0.93334335
+Iteration 11, loss = 0.91937692
+Iteration 12, loss = 0.90851239
+Iteration 13, loss = 0.89954214
+Iteration 14, loss = 0.89127080
+Iteration 15, loss = 0.88335621
+Iteration 16, loss = 0.87633589
+Iteration 17, loss = 0.86888772
+Iteration 18, loss = 0.86064130
+Iteration 19, loss = 0.85184220
+Iteration 20, loss = 0.84280109
+Iteration 21, loss = 0.83366464
+Iteration 22, loss = 0.82451882
+Iteration 23, loss = 0.81550400
+Iteration 24, loss = 0.80671935
+Iteration 25, loss = 0.79823657
+Iteration 26, loss = 0.79001610
+Iteration 27, loss = 0.78197968
+Iteration 28, loss = 0.77398709
+Iteration 29, loss = 0.76600144
+Iteration 30, loss = 0.75788922
+Iteration 31, loss = 0.74964361
+Iteration 32, loss = 0.74129784
+Iteration 33, loss = 0.73289726
+Iteration 34, loss = 0.72455418
+Iteration 35, loss = 0.71638369
+Iteration 36, loss = 0.70854002
+Iteration 37, loss = 0.70102759
+Iteration 38, loss = 0.69376897
+Iteration 39, loss = 0.68673559
+Iteration 40, loss = 0.67997135
+Iteration 41, loss = 0.67340096
+Iteration 42, loss = 0.66697897
+Iteration 43, loss = 0.66063500
+Iteration 44, loss = 0.65437581
+Iteration 45, loss = 0.64814654
+Iteration 46, loss = 0.64194844
+Iteration 47, loss = 0.63585933
+Iteration 48, loss = 0.62992711
+Iteration 49, loss = 0.62414876
+Iteration 50, loss = 0.61851299
+Iteration 51, loss = 0.61296837
+Iteration 52, loss = 0.60748828
+Iteration 53, loss = 0.60206362
+Iteration 54, loss = 0.59668014
+Iteration 55, loss = 0.59134451
+Iteration 56, loss = 0.58604191
+Iteration 57, loss = 0.58077738
+Iteration 58, loss = 0.57554749
+Iteration 59, loss = 0.57035206
+Iteration 60, loss = 0.56519984
+Iteration 61, loss = 0.56007873
+Iteration 62, loss = 0.55502110
+Iteration 63, loss = 0.55009086
+Iteration 64, loss = 0.54531778
+Iteration 65, loss = 0.54073404
+Iteration 66, loss = 0.53630039
+Iteration 67, loss = 0.53204349
+Iteration 68, loss = 0.52784837
+Iteration 69, loss = 0.52362849
+Iteration 70, loss = 0.51935732
+Iteration 71, loss = 0.51501962
+Iteration 72, loss = 0.51061267
+Iteration 73, loss = 0.50637570
+Iteration 74, loss = 0.50234988
+Iteration 75, loss = 0.49851739
+Iteration 76, loss = 0.49479519
+Iteration 77, loss = 0.49112572
+Iteration 78, loss = 0.48750079
+Iteration 79, loss = 0.48392987
+Iteration 80, loss = 0.48041848
+Iteration 81, loss = 0.47694996
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 82, loss = 0.47353018
+Iteration 83, loss = 0.47016459
+Iteration 84, loss = 0.46683878
+Iteration 85, loss = 0.46355343
+Iteration 86, loss = 0.46029462
+Iteration 87, loss = 0.45704750
+Iteration 88, loss = 0.45382821
+Iteration 89, loss = 0.45063100
+Iteration 90, loss = 0.44744041
+Iteration 91, loss = 0.44425963
+Iteration 92, loss = 0.44108602
+Iteration 93, loss = 0.43789537
+Iteration 94, loss = 0.43470086
+Iteration 95, loss = 0.43147540
+Iteration 96, loss = 0.42824343
+Iteration 97, loss = 0.42496488
+Iteration 98, loss = 0.42165187
+Iteration 99, loss = 0.41837777
+Iteration 100, loss = 0.41519660
+Iteration 101, loss = 0.41207442
+Iteration 102, loss = 0.40905062
+Iteration 103, loss = 0.40614156
+Iteration 104, loss = 0.40333617
+Iteration 105, loss = 0.40063043
+Iteration 106, loss = 0.39802516
+Iteration 107, loss = 0.39550492
+Iteration 108, loss = 0.39307375
+Iteration 109, loss = 0.39068825
+Iteration 110, loss = 0.38835551
+Iteration 111, loss = 0.38606317
+Iteration 112, loss = 0.38380201
+Iteration 113, loss = 0.38157179
+Iteration 114, loss = 0.37936991
+Iteration 115, loss = 0.37719500
+Iteration 116, loss = 0.37503728
+Iteration 117, loss = 0.37289997
+Iteration 118, loss = 0.37078269
+Iteration 119, loss = 0.36868845
+Iteration 120, loss = 0.36661903
+Iteration 121, loss = 0.36456953
+Iteration 122, loss = 0.36254246
+Iteration 123, loss = 0.36053795
+Iteration 124, loss = 0.35855660
+Iteration 125, loss = 0.35659773
+Iteration 126, loss = 0.35465904
+Iteration 127, loss = 0.35273721
+Iteration 128, loss = 0.35083436
+Iteration 129, loss = 0.34895590
+Iteration 130, loss = 0.34709959
+Iteration 131, loss = 0.34525891
+Iteration 132, loss = 0.34343473
+Iteration 133, loss = 0.34162658
+Iteration 134, loss = 0.33983515
+Iteration 135, loss = 0.33806366
+Iteration 136, loss = 0.33631088
+Iteration 137, loss = 0.33457355
+Iteration 138, loss = 0.33285174
+Iteration 139, loss = 0.33115000
+Iteration 140, loss = 0.32946382
+Iteration 141, loss = 0.32779302
+Iteration 142, loss = 0.32613932
+Iteration 143, loss = 0.32449994
+Iteration 144, loss = 0.32287645
+Iteration 145, loss = 0.32126752
+Iteration 146, loss = 0.31967206
+Iteration 147, loss = 0.31808964
+Iteration 148, loss = 0.31651934
+Iteration 149, loss = 0.31496161
+Iteration 150, loss = 0.31341698
+Iteration 151, loss = 0.31188388
+Iteration 152, loss = 0.31036196
+Iteration 153, loss = 0.30885160
+Iteration 154, loss = 0.30735329
+Iteration 155, loss = 0.30586652
+Iteration 156, loss = 0.30439221
+Iteration 157, loss = 0.30292948
+Iteration 158, loss = 0.30147712
+Iteration 159, loss = 0.30003470
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iteration 160, loss = 0.29860283
+Iteration 161, loss = 0.29718110
+Iteration 162, loss = 0.29576910
+Iteration 163, loss = 0.29436680
+Iteration 164, loss = 0.29297373
+Iteration 165, loss = 0.29159013
+Iteration 166, loss = 0.29021540
+Iteration 167, loss = 0.28885161
+Iteration 168, loss = 0.28749739
+Iteration 169, loss = 0.28615184
+Iteration 170, loss = 0.28481495
+Iteration 171, loss = 0.28348676
+Iteration 172, loss = 0.28216686
+Iteration 173, loss = 0.28085544
+Iteration 174, loss = 0.27955158
+Iteration 175, loss = 0.27825594
+Iteration 176, loss = 0.27696845
+Iteration 177, loss = 0.27568902
+Iteration 178, loss = 0.27441754
+Iteration 179, loss = 0.27315415
+Iteration 180, loss = 0.27189895
+Iteration 181, loss = 0.27065116
+Iteration 182, loss = 0.26941030
+Iteration 183, loss = 0.26817706
+Iteration 184, loss = 0.26695143
+Iteration 185, loss = 0.26573360
+Iteration 186, loss = 0.26452352
+Iteration 187, loss = 0.26332088
+Iteration 188, loss = 0.26212579
+Iteration 189, loss = 0.26093945
+Iteration 190, loss = 0.25976078
+Iteration 191, loss = 0.25858907
+Iteration 192, loss = 0.25742446
+Iteration 193, loss = 0.25626695
+Iteration 194, loss = 0.25511614
+Iteration 195, loss = 0.25397240
+Iteration 196, loss = 0.25283528
+Iteration 197, loss = 0.25170456
+Iteration 198, loss = 0.25058058
+Iteration 199, loss = 0.24946362
+Iteration 200, loss = 0.24835333
+Iteration 201, loss = 0.24725022
+Iteration 202, loss = 0.24615419
+Iteration 203, loss = 0.24506470
+Iteration 204, loss = 0.24398147
+Iteration 205, loss = 0.24290486
+Iteration 206, loss = 0.24183503
+Iteration 207, loss = 0.24077227
+Iteration 208, loss = 0.23971629
+Iteration 209, loss = 0.23866673
+Iteration 210, loss = 0.23762359
+Iteration 211, loss = 0.23658658
+Iteration 212, loss = 0.23555579
+Iteration 213, loss = 0.23453144
+Iteration 214, loss = 0.23351334
+Iteration 215, loss = 0.23250178
+Iteration 216, loss = 0.23149627
+Iteration 217, loss = 0.23049716
+Iteration 218, loss = 0.22950421
+Iteration 219, loss = 0.22851762
+Iteration 220, loss = 0.22753711
+Iteration 221, loss = 0.22656278
+Iteration 222, loss = 0.22559475
+Iteration 223, loss = 0.22463300
+Iteration 224, loss = 0.22367732
+Iteration 225, loss = 0.22272788
+Iteration 226, loss = 0.22178484
+Iteration 227, loss = 0.22084794
+Training loss did not improve more than tol=0.001000 for 10 consecutive epochs. Stopping.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9666666666666667
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>87     Iris-versicolor
+111     Iris-virginica
+10         Iris-setosa
+91     Iris-versicolor
+49         Iris-setosa
+60     Iris-versicolor
+72     Iris-versicolor
+67     Iris-versicolor
+39         Iris-setosa
+55     Iris-versicolor
+66     Iris-versicolor
+142     Iris-virginica
+53     Iris-versicolor
+1          Iris-setosa
+19         Iris-setosa
+112     Iris-virginica
+85     Iris-versicolor
+38         Iris-setosa
+21         Iris-setosa
+35         Iris-setosa
+102     Iris-virginica
+132     Iris-virginica
+126     Iris-virginica
+24         Iris-setosa
+61     Iris-versicolor
+2          Iris-setosa
+95     Iris-versicolor
+90     Iris-versicolor
+76     Iris-versicolor
+117     Iris-virginica
+Name: variety, dtype: object [&#39;Iris-versicolor&#39; &#39;Iris-virginica&#39; &#39;Iris-setosa&#39; &#39;Iris-versicolor&#39;
+ &#39;Iris-setosa&#39; &#39;Iris-versicolor&#39; &#39;Iris-virginica&#39; &#39;Iris-versicolor&#39;
+ &#39;Iris-setosa&#39; &#39;Iris-versicolor&#39; &#39;Iris-versicolor&#39; &#39;Iris-virginica&#39;
+ &#39;Iris-versicolor&#39; &#39;Iris-setosa&#39; &#39;Iris-setosa&#39; &#39;Iris-virginica&#39;
+ &#39;Iris-versicolor&#39; &#39;Iris-setosa&#39; &#39;Iris-setosa&#39; &#39;Iris-setosa&#39;
+ &#39;Iris-virginica&#39; &#39;Iris-virginica&#39; &#39;Iris-virginica&#39; &#39;Iris-setosa&#39;
+ &#39;Iris-versicolor&#39; &#39;Iris-setosa&#39; &#39;Iris-versicolor&#39; &#39;Iris-versicolor&#39;
+ &#39;Iris-versicolor&#39; &#39;Iris-virginica&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span> <span class="c1">#mengimpor modul pickle, yang menyediakan fungsionalitas untuk menyimpan dan memuat objek Python.</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;mlpku&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> <span class="c1">#konstruksi yang digunakan untuk membuka file dengan nama &#39;mlpku&#39; dalam mode write-binary (&#39;wb&#39;)</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">joblib</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;mlpku&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">clfuji</span> <span class="o">=</span> <span class="n">joblib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_uji</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Jhonfiliusgultom3/data/main/ujiiris.csv&#39;</span><span class="p">)</span>
+<span class="n">data_uji</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-139d3e55-aa1d-4f02-8ad9-d37c33c31dbf">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal.length</th>
+      <th>sepal.width</th>
+      <th>petal.length</th>
+      <th>petal.width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1.3</td>
+      <td>3.7</td>
+      <td>1.5</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.0</td>
+      <td>3.3</td>
+      <td>1.4</td>
+      <td>0.2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.0</td>
+      <td>3.2</td>
+      <td>4.7</td>
+      <td>1.4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6.4</td>
+      <td>3.2</td>
+      <td>4.5</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>3.8</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-139d3e55-aa1d-4f02-8ad9-d37c33c31dbf')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-139d3e55-aa1d-4f02-8ad9-d37c33c31dbf button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-139d3e55-aa1d-4f02-8ad9-d37c33c31dbf');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span><span class="o">=</span><span class="n">clfuji</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data_uji</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Iris-setosa&#39;, &#39;Iris-setosa&#39;, &#39;Iris-virginica&#39;, &#39;Iris-versicolor&#39;,
+       &#39;Iris-virginica&#39;, &#39;Iris-virginica&#39;], dtype=&#39;&lt;U15&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tree.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">DECISION TREE UNTUK DATA WEATHER (EXCELL)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pca.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PCA DATA IRIS</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-librari"><em><strong>Import Librari</strong></em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membagi-data-menjadi-data-latih-dan-uji"><em><strong>Membagi data menjadi data latih dan uji</strong></em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menghitung-akurasi"><em><strong>Menghitung akurasi</strong></em></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 21-019 JHON FILIUS GULTOM
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
