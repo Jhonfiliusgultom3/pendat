@@ -6,3 +6,4 @@
 - Agama       : Katolik
 - Cita-Cita   : Pengusaha sukses 
 - Hobi        : Bernyanyi, membaca buku
+- Email       : jhonfiliusgultom11@gmail.com
